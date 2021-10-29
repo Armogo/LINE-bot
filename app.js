@@ -19,7 +19,7 @@ const config = {
 if (!CHANNEL_ACCESS_TOKEN || !CHANNEL_SECRET) {
   console.error(
     `[error]: The "${
-    CHANNEL_ACCESS_TOKEN ? "CHANNEL_SECRET" : "CHANNEL_ACCESS_TOKEN"
+      CHANNEL_ACCESS_TOKEN ? "CHANNEL_SECRET" : "CHANNEL_ACCESS_TOKEN"
     }" environment variable is required`
   );
   process.exit(1);
@@ -35,11 +35,11 @@ const app = express();
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post("/", line.middleware(config), (req, res) => {
-  console.log('\nEvents', req.body.events)
+  console.log("\nEvents", req.body.events);
   Promise.all(req.body.events.map(handleEvent))
     .then((result) => {
-      console.log('result', result)
-      res.json(result)
+      console.log("result", result);
+      res.json(result);
     })
     .catch((err) => {
       console.error(err);
