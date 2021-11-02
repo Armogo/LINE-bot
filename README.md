@@ -2,6 +2,8 @@
 
 A LINE bot sends reminding message at specific time appointed by user
 
+Node.js version: 14.17.5
+
 ## How to use
 
 ### Install deps
